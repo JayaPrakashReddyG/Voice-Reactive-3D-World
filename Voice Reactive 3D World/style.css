@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #050508;
+  color: #fff;
+}
+
+#webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* --- UI OVERLAY CONTAINER --- */
+#ui-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none; /* Allows mouse interaction with canvas below except buttons */
+}
+
+#ui-container * {
+  pointer-events: auto; /* Re-enables pointer events for UI controls */
+}
+
+/* --- TOGGLE BUTTON --- */
+#toggle-mic-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+#toggle-mic-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* --- STATUS INDICATOR --- */
+#status {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* --- TRANSCRIPT DISPLAY BOX --- */
+#transcript-box {
+  margin-top: 5px;
+  padding: 12px 20px;
+  width: 380px;
+  max-width: 90vw;
+  background: rgba(10, 10, 18, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: border-color 0.3s ease;
+}
+
+#transcript-box strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8888aa;
+}
+
+#transcript-text {
+  font-size: 0.95rem;
+  margin-top: 6px;
+  color: #00ffff;
+  word-wrap: break-word;
+  line-height: 1.4;
+  min-height: 1.4em;
+}

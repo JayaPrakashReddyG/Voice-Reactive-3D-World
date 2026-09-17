@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Reactive 3D World</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <div id="ui-container">
+    <button id="toggle-mic-btn">Turn Mic ON</button>
+    <div id="status">Click button to enable voice reaction</div>
+    
+    <!-- Speech Transcript Display Box -->
+    <div id="transcript-box">
+      <strong>Live Transcript:</strong>
+      <p id="transcript-text">...</p>
+    </div>
+  </div>
+
+  <canvas id="webgl"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
